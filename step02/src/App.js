@@ -15,8 +15,8 @@ const App = () => {
   return (
     <div className="App">
       <input value={text} onChange={onChangeText} />
-      <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open} />
+      <button onClick={onClickOpen}>{open ? ('非表示') : ('表示')}</button>
+      <ChildArea visible={open} />
     </div>
   );
 }
