@@ -11,6 +11,12 @@ const style = {
 
 const ChildArea = (props) => {
   const { visible } = props;
+  const data = [...Array(2000).keys()];
+
+  data.forEach(() => {  // 重い処理
+    console.log('レンダリングされた！');
+  });
+
   return (
     <>
       {visible ? (
