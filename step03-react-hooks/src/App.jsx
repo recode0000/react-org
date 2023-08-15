@@ -1,17 +1,26 @@
-import { useContext } from 'react';
+import { useReducer } from 'react';
 import './App.css';
-import ChildArea from './components/childArea';
-import demoInfoContext from './main';
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "increment":
+      return state + 1;
+    case "decrement":
+      return state - 1;
+    default:
+      return state;
+  }
+}
 
 const App = () => {
-  const demoInfo = useContext(demoInfoContext);
+  const [state, dispatch] = useReducer(reducer, 0);
+
   return (
     <div className="App">
-      <h1>useContext</h1>
-      <p>{demoInfo.name}</p>
-      <p>{demoInfo.age}</p>
-      <p>{demoInfo.prefecture}</p>
-      <ChildArea />
+      <h2>useReducer</h2>
+      <p>カウント: {state}</p>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
     </div>
   )
 }

@@ -1,13 +1,8 @@
 .App {
-  background: gray;
-  color: black;
-  padding: 30px 10px;
   text-align: center;
 }
 
-
-.child {
-  background: #fefefe;
-  color: black;
-  padding: 30px 10px;
+.wrapper {
+  display: flex;
+  gap: 10px;
 }
