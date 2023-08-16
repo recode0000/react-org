@@ -1,9 +1,8 @@
-import { useLocalStorage } from 'react';
 import useLocalStorage from './useLocalStorage';
 import './App.css';
 
 const App = () => {
-  const [age, setAge] = useLocalStorage('age', 20);
+  const [age, setAge] = useLocalStorage('age', 10);
 
   return (
     <div className="App">
