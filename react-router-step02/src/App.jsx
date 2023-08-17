@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, NavLink } from 'react-router-dom';
+import Home from './routes/home';
+import About from './routes/about';
+import Contact from './routes/contact';
+import Posts from './routes/posts';
+import Post from './routes/post';
+import NoMatch from './routes/nomatch';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Hello React Router v6</h1>
+      <ul>
+        <li>
+          <NavLink
+            style={({ isActive }) => (isActive ? { color: 'blue' } : undefined)}
+            to="/"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            style={({ isActive }) => (isActive ? { color: 'blue' } : undefined)}
+            to="/about"
+          >
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            style={({ isActive }) => (isActive ? { color: 'blue' } : undefined)}
+            to="/contact"
+          >
+            Contact
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? 'active' : undefined)}
+            to="/posts"
+          >
+            Posts
+          </NavLink>
+        </li>
+      </ul>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/posts" element={<Posts />}>
+          <Route path=":postId" element={<Post />} />
+        </Route>
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </div>
+  );
 }
-
-export default App
+export default App;
