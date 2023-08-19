@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import Posts from './components/Posts'
 
 function App () {
   const count = useSelector((state) => state.count);
@@ -14,7 +15,7 @@ function App () {
       <div>Count:{count}</div>
       <button onClick={increase}>Up</button>
       <button onClick={decrease}>Down</button>
-      {console.log({count})}
+      <Posts />
     </>
   );
 }
