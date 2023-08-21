@@ -43,7 +43,8 @@ const Todo = (props) => {
           </button>
         </div>
       </form>
-    );
+  );
+  
     const viewTemplate = (
       <div className="stack-small">
         <div className="c-cb">
