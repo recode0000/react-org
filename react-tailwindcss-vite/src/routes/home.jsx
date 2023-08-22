@@ -1,6 +1,7 @@
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <h2>Homeページ</h2>
   )
 }
 

@@ -4,14 +4,14 @@ const Header = () => {
   return (
     <header className="px-5 py-8 flex flex-row justify-between">
       <h1 className="font-bold text-xl">
-        <a href="/">テスト</a>
+        <NavLink to="/">TEST</NavLink>
       </h1>
       <ul className="flex flex-row gap-6">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="about">About</NavLink>
         </li>
         <li>
-          <NavLink to="about">About</NavLink>
+          <NavLink to="/news">News</NavLink>
         </li>
         <li>
           <NavLink to="contact">Contact</NavLink>
